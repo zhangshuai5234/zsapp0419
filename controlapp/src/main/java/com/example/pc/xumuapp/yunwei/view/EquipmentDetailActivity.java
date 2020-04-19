@@ -133,10 +133,11 @@ public class EquipmentDetailActivity extends AppCompatActivity implements OrderV
         aSwitch4 = findViewById(R.id.switch4);
         aSwitch5 = findViewById(R.id.switch5);
         aSwitch6 = findViewById(R.id.switch6);
+
         aSwitch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
+                if (buttonView.isPressed())
                 {
                     //设置SP
 //                    SettingPre.setSwitchFiled(isChecked);
@@ -189,6 +190,17 @@ public class EquipmentDetailActivity extends AppCompatActivity implements OrderV
      */
     @Override
     public void GetEquipmentStatusSuccess(EquipmentstatusModel equipmentstatusModel) {
+//        String str1 = (String)equipmentstatusModel.getData().getTemperature();
+        textview1.setText(String.valueOf(equipmentstatusModel.getData().getTemperature()) );
+        textview2.setText(String.valueOf(equipmentstatusModel.getData().getHumidity()));
+//        氮气
+        textview3.setText(String.valueOf(equipmentstatusModel.getData().getTemperature()));
+//        风速
+        textview4.setText(String.valueOf(equipmentstatusModel.getData().getTemperature()));
+//        硫化氢
+        textview5.setText(String.valueOf(equipmentstatusModel.getData().getTemperature()));
+        textview6.setText(String.valueOf(equipmentstatusModel.getData().getCarbonDioxideContent()));
+
         if (equipmentstatusModel.isSuccess()){
 
             if (equipmentstatusModel.getData().getSwitch1().equals("0")){
