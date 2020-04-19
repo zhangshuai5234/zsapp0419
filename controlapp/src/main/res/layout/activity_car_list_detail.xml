@@ -246,7 +246,7 @@
                                     android:textSize="13dp" />
 
                                 <TextView
-                                    android:id="@+id/air_temperature_tv"
+                                    android:id="@+id/tv1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/air_temperature_icon_tv"
@@ -282,7 +282,7 @@
                                     android:textSize="13dp" />
 
                                 <TextView
-                                    android:id="@+id/air_humidity_tv"
+                                    android:id="@+id/tv2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/air_humidity_icon_text"
@@ -318,7 +318,7 @@
                                     android:textSize="13dp" />
 
                                 <TextView
-                                    android:id="@+id/light_tv"
+                                    android:id="@+id/tv3"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/light_icon_text"
@@ -354,7 +354,7 @@
                                     android:textSize="13dp" />
 
                                 <TextView
-                                    android:id="@+id/soil_temperature_tv"
+                                    android:id="@+id/tv4"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/soil_temperature_icon_text"
@@ -397,7 +397,7 @@
                                     android:textSize="13dp" />
 
                                 <TextView
-                                    android:id="@+id/soil_humidity_tv"
+                                    android:id="@+id/tv5"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/soil_humidity_icon_text"
@@ -433,7 +433,7 @@
                                     android:textSize="13dp" />
 
                                 <TextView
-                                    android:id="@+id/co2_tv"
+                                    android:id="@+id/tv6"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/co2_icon_text"
@@ -469,7 +469,7 @@
                                     android:textSize="13dp" />
 
                                 <TextView
-                                    android:id="@+id/soilph_tv"
+                                    android:id="@+id/tv7"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/soilph_icon_text"

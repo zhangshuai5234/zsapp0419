@@ -58,6 +58,12 @@ public class EquipmentDetailActivity extends AppCompatActivity implements OrderV
     Switch aSwitch4;
     Switch aSwitch5;
     Switch aSwitch6;
+    TextView textview1;
+    TextView textview2;
+    TextView textview3;
+    TextView textview4;
+    TextView textview5;
+    TextView textview6;
     private EquipmentStatusPersenter equipmentStatusPersenter = new EquipmentStatusPersenter(this);
     private OrderPersenter orderPersenter = new OrderPersenter(this);
 
@@ -81,6 +87,13 @@ public class EquipmentDetailActivity extends AppCompatActivity implements OrderV
      * initview
      */
     public void initview(){
+
+        textview1 = findViewById(R.id.tv1);
+        textview2 = findViewById(R.id.tv2);
+        textview3 = findViewById(R.id.tv3);
+        textview4 = findViewById(R.id.tv4);
+        textview5 = findViewById(R.id.tv5);
+        textview6 = findViewById(R.id.tv6);
 
         back_btn = (ImageView) findViewById(R.id.iv_back);
         rigth_btn = (TextView) findViewById(R.id.nav_edit);
