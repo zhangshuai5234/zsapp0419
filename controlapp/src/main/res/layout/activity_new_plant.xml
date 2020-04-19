@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f1f1f1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#ffffff">
+
+            <include layout="@layout/actionbar_layout"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="6dp"
+                    android:layout_height="15dp"
+                    android:src="@mipmap/decorate"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    />
+                <TextView
+                    android:id="@+id/title_lab"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical"
+                    android:text=" 种植详细信息"
+                    android:textColor="#06B9D1" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#11000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#ffffff"
+                android:orientation="horizontal" >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:text="任务编号"
+                    android:textColor="#525252"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/renwuhao"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:layout_marginLeft="15dp"
+                    android:background="#00000000"
+                    android:gravity="center_vertical"
+                    android:hint="请填写任务编号"
+                    android:password="false"
+                    android:text=""
+                    android:textColor="#444444"
+                    android:textColorHint="#bbbbbb"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#11000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#ffffff"
+                android:orientation="horizontal" >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:text="本次完成数量"
+                    android:textColor="#525252"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/finishnum"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:layout_marginLeft="15dp"
+                    android:background="#00000000"
+                    android:gravity="center_vertical"
+                    android:hint="请填写完成数量"
+                    android:inputType="number"
+                    android:password="false"
+                    android:text=""
+                    android:textColor="#444444"
+                    android:textColorHint="#bbbbbb"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#11000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#ffffff"
+                android:orientation="horizontal" >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:text="开始时间"
+                    android:textColor="#525252"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/begintime"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:layout_marginLeft="15dp"
+                    android:background="#00000000"
+                    android:gravity="center_vertical"
+                    android:hint="例：2019-01-01"
+                    android:maxLength="10"
+                    android:inputType="datetime"
+                    android:text=""
+                    android:textColor="#444444"
+                    android:textColorHint="#bbbbbb"
+                    android:textSize="15sp" />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#11000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#ffffff"
+                android:orientation="horizontal" >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:text="结束时间"
+                    android:textColor="#525252"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/endtime"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:layout_marginLeft="15dp"
+                    android:background="#00000000"
+                    android:gravity="center_vertical"
+                    android:hint="例：2019-01-01"
+                    android:maxLength="10"
+                    android:inputType="datetime"
+                    android:password="false"
+                    android:text=""
+                    android:textColor="#444444"
+                    android:textColorHint="#bbbbbb"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#11000000" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/bt_queren"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@mipmap/top"
+                    android:gravity="center"
+                    android:text="确认提交"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp"
+                    android:layout_weight="1"/>
+                <Button
+                    android:id="@+id/bt_zhuce"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@mipmap/top"
+                    android:gravity="center"
+                    android:text="发送指令"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+

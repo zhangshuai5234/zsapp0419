@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+        <TextView
+            android:id="@+id/carid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GWA20011999314"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#282828"
+            />
+        <TextView
+            android:id="@+id/timelab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2019-7-15"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="80dp"
+            android:textSize="15sp"
+            android:textColor="#B4B4B4"
+            />
+        <TextView
+            android:id="@+id/chargebtn"
+            android:layout_width="55dp"
+            android:layout_height="27dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="15dp"
+            android:background="@mipmap/pay_button_default"
+            android:text="缴费"
+            android:gravity="center"
+            android:textSize="13dp"
+            android:textColor="#ffffff"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>

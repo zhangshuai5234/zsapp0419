@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f1f1f1" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#ffffff">
+
+        <include layout="@layout/actionbar_layout"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="6dp"
+                android:layout_height="15dp"
+                android:src="@mipmap/decorate"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="农机信息(必填)*"
+                android:gravity="center_vertical"
+                android:textColor="#06B9D1" />
+        
+        </LinearLayout>
+     
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#11000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/host_id"
+                android:maxLength="12"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"
+                android:layout_marginLeft="15dp"
+                android:background="#00000000"
+                android:gravity="center_vertical"
+                android:hint="请填写主机号"
+                android:text=""
+                android:textColor="#444444"
+                android:textColorHint="#bbbbbb"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#11000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:text="姓名："
+                android:textColor="#282828"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"
+                android:background="#00000000"
+                android:gravity="center_vertical"
+                android:hint="此处输入"
+                android:password="false"
+                android:text=""
+                android:textColor="#444444"
+                android:textColorHint="#bbbbbb"
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="0dp"
+                android:gravity="center_vertical"
+                android:text="联系电话："
+                android:textColor="#282828"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/phone_edit"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"
+                android:background="#00000000"
+                android:gravity="center_vertical"
+                android:hint="此处输入"
+                android:password="false"
+                android:text=""
+                android:textColor="#444444"
+                android:textColorHint="#bbbbbb"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#11000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="#ffffff"
+            android:orientation="vertical" >
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+                <Spinner
+                    android:id="@+id/shengfen"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:popupBackground="#bbbbbb"
+                    android:tooltipText="选择方向"
+                    android:spinnerMode="dropdown"
+                    android:background="@drawable/spinnerbg"
+                    />
+
+                <Spinner
+                    android:id="@+id/chengshi"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:popupBackground="#bbbbbb"
+                    android:tooltipText="选择方向"
+                    android:spinnerMode="dropdown"
+                    android:background="@drawable/spinnerbg"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <Spinner
+                    android:id="@+id/quyu"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:popupBackground="#bbbbbb"
+                    android:tooltipText="选择方向"
+                    android:spinnerMode="dropdown"
+                    android:background="@drawable/spinnerbg"
+                    />
+
+                <Spinner
+                    android:id="@+id/xiangzhen"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:popupBackground="#bbbbbb"
+                    android:tooltipText="选择方向"
+                    android:spinnerMode="dropdown"
+                    android:background="@drawable/spinnerbg"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#11000000" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/coopname"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"
+                android:layout_marginLeft="15dp"
+                android:background="#00000000"
+                android:gravity="center_vertical"
+                android:hint="请填写合作社名称"
+                android:inputType="text"
+                android:text=""
+                android:textColor="#444444"
+                android:textColorHint="#bbbbbb"
+                android:textSize="14sp" />
+            <Spinner
+                android:id="@+id/coop"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="2.5"
+                android:layout_marginRight="10dp"
+                android:popupBackground="#bbbbbb"
+                android:tooltipText="选择方向"
+                android:spinnerMode="dropdown"
+                android:background="@drawable/spinnerbg"
+                />
+        </LinearLayout>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#11000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:orientation="horizontal" >
+
+
+            <EditText
+                android:id="@+id/car_number"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"
+                android:layout_marginLeft="15dp"
+                android:background="#00000000"
+                android:gravity="center_vertical"
+                android:hint="请填写车牌号码"
+                android:password="false"
+                android:text=""
+                android:textColor="#444444"
+                android:textColorHint="#bbbbbb"
+                android:textSize="14sp" />
+
+
+
+                <EditText
+                    android:id="@+id/brand"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:background="#00000000"
+                    android:gravity="center_vertical"
+                    android:hint="请填写车辆品牌"
+                    android:password="false"
+                    android:text=""
+                    android:textColor="#444444"
+                    android:textColorHint="#bbbbbb"
+                    android:textSize="14sp" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#11000000" />
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#11000000" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="6dp"
+            android:layout_height="15dp"
+            android:src="@mipmap/decorate"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:text="机具信息(非必填)"
+            android:textColor="#06B9D1" />
+    </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#11000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:orientation="horizontal" >
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:text="机具号"
+                android:textColor="#525252"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/jijuhao"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"
+                android:layout_marginLeft="15dp"
+                android:background="#00000000"
+                android:gravity="center_vertical"
+                android:hint="请填写机具号"
+                android:password="false"
+                android:text=""
+                android:textColor="#444444"
+                android:textColorHint="#bbbbbb"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#11000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:orientation="horizontal" >
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:text="标识"
+                android:textColor="#525252"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/tag"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"
+                android:layout_marginLeft="15dp"
+                android:background="#00000000"
+                android:gravity="center_vertical"
+                android:hint="请填写标识"
+                android:password="false"
+                android:text=""
+                android:textColor="#444444"
+                android:textColorHint="#bbbbbb"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#11000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:orientation="horizontal" >
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:text="车辆编号"
+                android:textColor="#525252"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/bianhao"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"
+                android:layout_marginLeft="15dp"
+                android:background="#00000000"
+                android:gravity="center_vertical"
+                android:hint="请填写车辆编号"
+                android:password="false"
+                android:text=""
+                android:textColor="#444444"
+                android:textColorHint="#bbbbbb"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#11000000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="6dp"
+            android:layout_height="15dp"
+            android:src="@mipmap/decorate"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:text="传感器信息(必填)*"
+            android:gravity="center_vertical"
+            android:textColor="#06B9D1" />
+    </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#11000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#ffffff"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:text="作业类型"
+                android:textColor="#525252"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/worktype"
+                android:layout_width="0dp"
+                android:layout_height="27dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1.3"
+                android:background="@drawable/spinnerbg"
+                android:popupBackground="#bbbbbb"
+                android:spinnerMode="dropdown"
+                android:tooltipText="选择方向" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#11000000" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:text="机具类型"
+                android:textColor="#525252"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/jijutype"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.3"
+                android:layout_marginRight="10dp"
+                android:popupBackground="#bbbbbb"
+                android:tooltipText="选择方向"
+                android:background="@drawable/spinnerbg"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#11000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:text="2号传感器安装方向"
+                android:textColor="#525252"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/chuangan2"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.3"
+                android:layout_marginRight="10dp"
+                android:popupBackground="#bbbbbb"
+                android:tooltipText="选择方向"
+                android:spinnerMode="dropdown"
+                android:background="@drawable/spinnerbg"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#11000000" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="6dp"
+            android:layout_height="15dp"
+            android:src="@mipmap/decorate"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="5dp"
+            android:text="机具测量信息(必填)"
+            android:textColor="#06B9D1" />
+    </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#11000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:text="下拉杆长度"
+                android:textColor="#525252"
+                android:textSize="15sp" />
+
+
+            <EditText
+                android:id="@+id/xialagan"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"
+                android:layout_marginLeft="15dp"
+                android:background="#00000000"
+                android:gravity="center_vertical"
+                android:hint="点击填写信息"
+                android:password="false"
+                android:inputType="number"
+                android:text=""
+                android:textColor="#444444"
+                android:textColorHint="#bbbbbb"
+                android:textSize="15sp" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#11000000" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:text="机具类型"
+                android:textColor="#525252"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/jiju_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.3"
+                android:popupBackground="#bbbbbb"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#11000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:text="机具当前作业深度"
+                android:textColor="#525252"
+                android:textSize="15sp" />
+
+
+            <EditText
+                android:id="@+id/now_depth"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"
+                android:layout_marginLeft="15dp"
+                android:background="#00000000"
+                android:gravity="center_vertical"
+                android:hint="点击填写信息"
+                android:inputType="number"
+                android:password="false"
+                android:text=""
+                android:textColor="#444444"
+                android:textColorHint="#bbbbbb"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#11000000" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:text="机具作业幅宽"
+                android:inputType="number"
+                android:textColor="#525252"
+                android:textSize="15sp" />
+
+
+            <EditText
+                android:id="@+id/fukuan"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"
+                android:layout_marginLeft="15dp"
+                android:background="#00000000"
+                android:gravity="center_vertical"
+                android:hint="点击填写信息"
+                android:inputType="number"
+                android:password="false"
+                android:text=""
+                android:textColor="#444444"
+                android:textColorHint="#bbbbbb"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#11000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="修改人"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/Modifier"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical"
+                android:text="000000001"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/bt_queren"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@mipmap/top"
+                android:gravity="center"
+                android:text="确认修改"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:layout_weight="1"/>
+            <Button
+                android:id="@+id/bt_zhuce"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@mipmap/top"
+                android:gravity="center"
+                android:text="发送指令"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

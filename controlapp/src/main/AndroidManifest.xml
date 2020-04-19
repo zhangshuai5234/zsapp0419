@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.pc.xumuapp">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/switch_selector_green" />
+
+        <activity android:name=".mvp_contrl.view.MainActivityNew" />
+        <activity android:name=".mvp_charge.view.ChangePsdActivity" />
+        <activity android:name=".yunwei.activity.PackActivity" />
+        <activity android:name=".yunwei.activity.NewPlantActivity" />
+        <activity android:name=".yunwei.activity.GongdanActivity" />
+        <activity android:name=".newAdded.view.RegisteActivity" />
+        <activity android:name=".newAdded.view.EditCarinfoActivity" />
+        <activity android:name=".mvp_login.view.Loginactivity" />
+        <activity android:name=".splash.SplashAcitivty">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".newAdded.adduserActivity" />
+        <activity android:name=".newAdded.CarlistActivity" />
+        <activity android:name=".newAdded.CarListDetailActivity" />
+        <activity android:name=".mvp_charge.view.ChargeDetailActivity" />
+        <activity android:name=".newAdded.AddCarinfoActivity" />
+        <activity android:name=".yunwei.activity.PlantActivity" />
+        <activity android:name=".yunwei.activity.GatherActivity" />
+        <activity android:name=".yunwei.activity.ProcessActivity" />
+        <activity android:name=".yunwei.view.EquipmentDetailActivity" />
+    </application>
+
+</manifest>

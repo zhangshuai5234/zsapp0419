@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+        <include layout="@layout/actionbar_layout">
+
+        </include>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp">
+
+
+            <TextView
+                android:id="@+id/sensorid1_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:text="传感器1:"
+                android:textColor="@color/text_gray1"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/sensor1_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/sensorid1_tv"
+                android:layout_marginLeft="20dp"
+                android:background="#00000000"
+                android:text="向前"
+                android:textColor="@color/text_gray1"
+                android:textSize="18sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp">
+
+
+            <TextView
+                android:id="@+id/sensorid2_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:text="传感器2:"
+                android:textColor="@color/text_gray1"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/sensor2_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/sensorid2_tv"
+                android:layout_marginLeft="20dp"
+                android:background="#00000000"
+                android:text="向前"
+                android:textColor="@color/text_gray1"
+                android:textSize="18sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp">
+
+
+            <TextView
+                android:id="@+id/sensorid3_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:text="传感器3:"
+                android:textColor="@color/text_gray1"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/sensor3_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/sensorid3_tv"
+                android:layout_marginLeft="20dp"
+                android:background="#00000000"
+                android:text="向左"
+                android:textColor="@color/text_gray1"
+                android:textSize="18sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp">
+
+
+            <TextView
+                android:id="@+id/xialagan_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:text="下拉杆:"
+                android:textColor="@color/text_gray1"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/link_length1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/xialagan_tv"
+                android:layout_marginLeft="20dp"
+                android:background="#00000000"
+                android:text="0223"
+                android:textColor="@color/text_gray1"
+                android:textSize="18sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp">
+
+            <TextView
+                android:id="@+id/ploughshareid_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:text="连接点到犁尖:"
+                android:textColor="@color/text_gray1"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/link_length2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ploughshareid_tv"
+                android:layout_marginLeft="20dp"
+                android:background="#00000000"
+                android:text="0685"
+                android:textColor="@color/text_gray1"
+                android:textSize="18sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp">
+
+            <TextView
+                android:id="@+id/groundid_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:text="连接点到地面:"
+                android:textColor="@color/text_gray1"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/lowBarPloughHeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/groundid_tv"
+                android:layout_marginLeft="20dp"
+                android:background="#00000000"
+                android:text="0685"
+                android:textColor="@color/text_gray1"
+                android:textSize="18sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp">
+
+            <TextView
+                android:id="@+id/ploughsharegroundid_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:text="犁尖到地面:"
+                android:textColor="@color/text_gray1"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/plough_ground_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ploughsharegroundid_tv"
+                android:layout_marginLeft="20dp"
+                android:background="#00000000"
+                android:text="0685"
+                android:textColor="@color/text_gray1"
+                android:textSize="18sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp">
+
+            <TextView
+                android:id="@+id/jobtypeid_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:text="作业类型:"
+                android:textColor="@color/text_gray1"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/jiju_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/jobtypeid_tv"
+                android:layout_marginLeft="20dp"
+                android:background="#00000000"
+                android:text="深松"
+                android:textColor="@color/text_gray1"
+                android:textSize="18sp" />
+        </RelativeLayout>
+        <Button
+            android:id="@+id/bt_next"
+            android:layout_width="135dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:text="开始安装"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:background="@color/bg_green1"/>
+
+        <TextView
+            android:id="@+id/attention_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:text="注意：安装完毕的主机要求必须有照片存档记录，请通过上方的拍照按钮拍摄主机的安装照片"
+            android:textSize="14dp"
+            android:visibility="gone"
+            android:textColor="@color/red_text"/>
+    </LinearLayout>
+
+</ScrollView>
