@@ -71,7 +71,7 @@ public interface ApiService {
     Observable<EquipmentModel>  getEquipList(@HeaderMap Map<String, String> headers, @Body RequestBody loginjson);
 
     //     指令下发
-    @POST("task/getList")
+    @POST("hw/send-command")
     Observable<OrderModel>  postOrder(@HeaderMap Map<String, String> headers, @Body RequestBody loginjson);
 
     //    设备状态查询

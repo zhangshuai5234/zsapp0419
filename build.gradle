@@ -19,7 +19,9 @@ allprojects {
 
         google()
         jcenter()
-
+        maven {
+            url 'https://dl.bintray.com/leaking/maven'
+        }
     }
 }
 

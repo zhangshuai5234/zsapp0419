@@ -1,30 +1,20 @@
 package com.example.pc.xumuapp.yunwei.model;
 
-import java.util.List;
-
 public class OrderModel {
 
     /**
-     * success : true
      * code : 200
+     * currentTime : 2020-04-20 04:46:42
+     * data : {"equipmentId":"1242322116261494786","id":"1252156727821430786","isSendOk":"1","sendTime":"2020-04-20 04:46:42","topic":"switch","tunnel":1,"tunnelValue":"1"}
      * errorMessage : success
-     * currentTime : 2019-12-09 16:29:40
-     * data : [{"lineNumber":1,"id":"1198920274007977985","taskId":"1198805786202083329","taskNumber":"TK-0001","taskDescription":"种植五味子","taskQuantity":20,"productionBaseId":"1198802998889943041","productionBaseNumber":"PB-001","productionBaseName":"基地1","productionBaseDescription":"第一个生产基地","productionCellId":"1198803964330643458","productionCellNumber":"PC-001","productionCellDescription":"基地01的第一个地块","managerId":"1198795020551983105","managerNumber":"15840500337","managerName":"姚峥","managerDescription":"","productId":"1198804621208981505","productNumber":"P-00001","productName":"五味子001","productDescription":"五味子","quantity":2,"unitDict":"pcs","percent":10,"beginTime":"2019-10-24","endTime":"2019-10-24","picPath":"","remark":""}]
+     * success : true
      */
 
-    private boolean success;
     private int code;
-    private String errorMessage;
     private String currentTime;
-    private List<DataBean> data;
-
-    public boolean isSuccess() {
-        return success;
-    }
-
-    public void setSuccess(boolean success) {
-        this.success = success;
-    }
+    private DataBean data;
+    private String errorMessage;
+    private boolean success;
 
     public int getCode() {
         return code;
@@ -32,14 +22,6 @@ public class OrderModel {
 
     public void setCode(int code) {
         this.code = code;
-    }
-
-    public String getErrorMessage() {
-        return errorMessage;
-    }
-
-    public void setErrorMessage(String errorMessage) {
-        this.errorMessage = errorMessage;
     }
 
     public String getCurrentTime() {
@@ -50,138 +32,55 @@ public class OrderModel {
         this.currentTime = currentTime;
     }
 
-    public List<DataBean> getData() {
+    public DataBean getData() {
         return data;
     }
 
-    public void setData(List<DataBean> data) {
+    public void setData(DataBean data) {
         this.data = data;
     }
 
-    public static class NewPlantBean{
+    public String getErrorMessage() {
+        return errorMessage;
+    }
 
-        /**
-         * code : 0
-         * currentTime :
-         * data : 0
-         * errorMessage :
-         * success : true
-         */
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
 
-        private int code;
-        private String currentTime;
-        private String data;
-        private String errorMessage;
-        private boolean success;
+    public boolean isSuccess() {
+        return success;
+    }
 
-        public int getCode() {
-            return code;
-        }
-
-        public void setCode(int code) {
-            this.code = code;
-        }
-
-        public String getCurrentTime() {
-            return currentTime;
-        }
-
-        public void setCurrentTime(String currentTime) {
-            this.currentTime = currentTime;
-        }
-
-        public String getData() {
-            return data;
-        }
-
-        public void setData(String data) {
-            this.data = data;
-        }
-
-        public String getErrorMessage() {
-            return errorMessage;
-        }
-
-        public void setErrorMessage(String errorMessage) {
-            this.errorMessage = errorMessage;
-        }
-
-        public boolean isSuccess() {
-            return success;
-        }
-
-        public void setSuccess(boolean success) {
-            this.success = success;
-        }
+    public void setSuccess(boolean success) {
+        this.success = success;
     }
 
     public static class DataBean {
         /**
-         * lineNumber : 1
-         * id : 1198920274007977985
-         * taskId : 1198805786202083329
-         * taskNumber : TK-0001
-         * taskDescription : 种植五味子
-         * taskQuantity : 20.0
-         * productionBaseId : 1198802998889943041
-         * productionBaseNumber : PB-001
-         * productionBaseName : 基地1
-         * productionBaseDescription : 第一个生产基地
-         * productionCellId : 1198803964330643458
-         * productionCellNumber : PC-001
-         * productionCellDescription : 基地01的第一个地块
-         * managerId : 1198795020551983105
-         * managerNumber : 15840500337
-         * managerName : 姚峥
-         * managerDescription :
-         * productId : 1198804621208981505
-         * productNumber : P-00001
-         * productName : 五味子001
-         * productDescription : 五味子
-         * quantity : 2.0
-         * unitDict : pcs
-         * percent : 10.0
-         * beginTime : 2019-10-24
-         * endTime : 2019-10-24
-         * picPath :
-         * remark :
+         * equipmentId : 1242322116261494786
+         * id : 1252156727821430786
+         * isSendOk : 1
+         * sendTime : 2020-04-20 04:46:42
+         * topic : switch
+         * tunnel : 1
+         * tunnelValue : 1
          */
 
-        private int lineNumber;
+        private String equipmentId;
         private String id;
-        private String taskId;
-        private String taskNumber;
-        private String taskDescription;
-        private double taskQuantity;
-        private String productionBaseId;
-        private String productionBaseNumber;
-        private String productionBaseName;
-        private String productionBaseDescription;
-        private String productionCellId;
-        private String productionCellNumber;
-        private String productionCellDescription;
-        private String managerId;
-        private String managerNumber;
-        private String managerName;
-        private String managerDescription;
-        private String productId;
-        private String productNumber;
-        private String productName;
-        private String productDescription;
-        private double quantity;
-        private String unitDict;
-        private double percent;
-        private String beginTime;
-        private String endTime;
-        private String picPath;
-        private String remark;
+        private String isSendOk;
+        private String sendTime;
+        private String topic;
+        private int tunnel;
+        private String tunnelValue;
 
-        public int getLineNumber() {
-            return lineNumber;
+        public String getEquipmentId() {
+            return equipmentId;
         }
 
-        public void setLineNumber(int lineNumber) {
-            this.lineNumber = lineNumber;
+        public void setEquipmentId(String equipmentId) {
+            this.equipmentId = equipmentId;
         }
 
         public String getId() {
@@ -192,212 +91,44 @@ public class OrderModel {
             this.id = id;
         }
 
-        public String getTaskId() {
-            return taskId;
+        public String getIsSendOk() {
+            return isSendOk;
         }
 
-        public void setTaskId(String taskId) {
-            this.taskId = taskId;
+        public void setIsSendOk(String isSendOk) {
+            this.isSendOk = isSendOk;
         }
 
-        public String getTaskNumber() {
-            return taskNumber;
+        public String getSendTime() {
+            return sendTime;
         }
 
-        public void setTaskNumber(String taskNumber) {
-            this.taskNumber = taskNumber;
+        public void setSendTime(String sendTime) {
+            this.sendTime = sendTime;
         }
 
-        public String getTaskDescription() {
-            return taskDescription;
+        public String getTopic() {
+            return topic;
         }
 
-        public void setTaskDescription(String taskDescription) {
-            this.taskDescription = taskDescription;
+        public void setTopic(String topic) {
+            this.topic = topic;
         }
 
-        public double getTaskQuantity() {
-            return taskQuantity;
+        public int getTunnel() {
+            return tunnel;
         }
 
-        public void setTaskQuantity(double taskQuantity) {
-            this.taskQuantity = taskQuantity;
+        public void setTunnel(int tunnel) {
+            this.tunnel = tunnel;
         }
 
-        public String getProductionBaseId() {
-            return productionBaseId;
+        public String getTunnelValue() {
+            return tunnelValue;
         }
 
-        public void setProductionBaseId(String productionBaseId) {
-            this.productionBaseId = productionBaseId;
-        }
-
-        public String getProductionBaseNumber() {
-            return productionBaseNumber;
-        }
-
-        public void setProductionBaseNumber(String productionBaseNumber) {
-            this.productionBaseNumber = productionBaseNumber;
-        }
-
-        public String getProductionBaseName() {
-            return productionBaseName;
-        }
-
-        public void setProductionBaseName(String productionBaseName) {
-            this.productionBaseName = productionBaseName;
-        }
-
-        public String getProductionBaseDescription() {
-            return productionBaseDescription;
-        }
-
-        public void setProductionBaseDescription(String productionBaseDescription) {
-            this.productionBaseDescription = productionBaseDescription;
-        }
-
-        public String getProductionCellId() {
-            return productionCellId;
-        }
-
-        public void setProductionCellId(String productionCellId) {
-            this.productionCellId = productionCellId;
-        }
-
-        public String getProductionCellNumber() {
-            return productionCellNumber;
-        }
-
-        public void setProductionCellNumber(String productionCellNumber) {
-            this.productionCellNumber = productionCellNumber;
-        }
-
-        public String getProductionCellDescription() {
-            return productionCellDescription;
-        }
-
-        public void setProductionCellDescription(String productionCellDescription) {
-            this.productionCellDescription = productionCellDescription;
-        }
-
-        public String getManagerId() {
-            return managerId;
-        }
-
-        public void setManagerId(String managerId) {
-            this.managerId = managerId;
-        }
-
-        public String getManagerNumber() {
-            return managerNumber;
-        }
-
-        public void setManagerNumber(String managerNumber) {
-            this.managerNumber = managerNumber;
-        }
-
-        public String getManagerName() {
-            return managerName;
-        }
-
-        public void setManagerName(String managerName) {
-            this.managerName = managerName;
-        }
-
-        public String getManagerDescription() {
-            return managerDescription;
-        }
-
-        public void setManagerDescription(String managerDescription) {
-            this.managerDescription = managerDescription;
-        }
-
-        public String getProductId() {
-            return productId;
-        }
-
-        public void setProductId(String productId) {
-            this.productId = productId;
-        }
-
-        public String getProductNumber() {
-            return productNumber;
-        }
-
-        public void setProductNumber(String productNumber) {
-            this.productNumber = productNumber;
-        }
-
-        public String getProductName() {
-            return productName;
-        }
-
-        public void setProductName(String productName) {
-            this.productName = productName;
-        }
-
-        public String getProductDescription() {
-            return productDescription;
-        }
-
-        public void setProductDescription(String productDescription) {
-            this.productDescription = productDescription;
-        }
-
-        public double getQuantity() {
-            return quantity;
-        }
-
-        public void setQuantity(double quantity) {
-            this.quantity = quantity;
-        }
-
-        public String getUnitDict() {
-            return unitDict;
-        }
-
-        public void setUnitDict(String unitDict) {
-            this.unitDict = unitDict;
-        }
-
-        public double getPercent() {
-            return percent;
-        }
-
-        public void setPercent(double percent) {
-            this.percent = percent;
-        }
-
-        public String getBeginTime() {
-            return beginTime;
-        }
-
-        public void setBeginTime(String beginTime) {
-            this.beginTime = beginTime;
-        }
-
-        public String getEndTime() {
-            return endTime;
-        }
-
-        public void setEndTime(String endTime) {
-            this.endTime = endTime;
-        }
-
-        public String getPicPath() {
-            return picPath;
-        }
-
-        public void setPicPath(String picPath) {
-            this.picPath = picPath;
-        }
-
-        public String getRemark() {
-            return remark;
-        }
-
-        public void setRemark(String remark) {
-            this.remark = remark;
+        public void setTunnelValue(String tunnelValue) {
+            this.tunnelValue = tunnelValue;
         }
     }
 }

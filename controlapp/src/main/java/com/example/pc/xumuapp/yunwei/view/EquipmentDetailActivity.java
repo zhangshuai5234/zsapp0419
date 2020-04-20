@@ -1,5 +1,6 @@
 package com.example.pc.xumuapp.yunwei.view;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.pc.xumuapp.R;
 import com.example.pc.xumuapp.Tools.OkHttpUtils;
@@ -58,12 +60,19 @@ public class EquipmentDetailActivity extends AppCompatActivity implements OrderV
     Switch aSwitch4;
     Switch aSwitch5;
     Switch aSwitch6;
+    Switch aSwitch0;
     TextView textview1;
     TextView textview2;
     TextView textview3;
     TextView textview4;
     TextView textview5;
     TextView textview6;
+
+    Switch selectSwitchBtn;
+    String btnStatus = "0";
+
+    private ProgressDialog progressDialog;
+
     private EquipmentStatusPersenter equipmentStatusPersenter = new EquipmentStatusPersenter(this);
     private OrderPersenter orderPersenter = new OrderPersenter(this);
 
@@ -133,36 +142,148 @@ public class EquipmentDetailActivity extends AppCompatActivity implements OrderV
         aSwitch4 = findViewById(R.id.switch4);
         aSwitch5 = findViewById(R.id.switch5);
         aSwitch6 = findViewById(R.id.switch6);
+        aSwitch0 = findViewById(R.id.switch0);
+
+    }
+
+    public  void  setSwitchListener() {
 
         aSwitch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                selectSwitchBtn = (Switch) buttonView;
                 if (buttonView.isPressed())
                 {
-                    //设置SP
-//                    SettingPre.setSwitchFiled(isChecked);
-//                    mSwith.setSwitchTextAppearance(getmContext(),R.style.switch_text_true_blue);
-//                    baseUtil.LongLoge("if:"+isChecked);
-//                    showToast("选择自动保存！");
-                    aSwitch1.setChecked(true);
+                   postOrder(selectSwitchBtn);
 
                 }else{
-                    aSwitch1.setChecked(true);
-                    //设置SP
-//                    SettingPre.setSwitchFiled(isChecked);
-//                    mSwith.setSwitchTextAppearance(getmContext(),R.style.switch_text_false_gray);
-//                    baseUtil.LongLoge("else:"+isChecked);
-//                    showToast("取消自动保存！");
 
                 }
 
             }
         });
-    }
+        aSwitch2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                selectSwitchBtn = (Switch) buttonView;
+                if (buttonView.isPressed())
+                {
+                    postOrder(selectSwitchBtn);
 
+                }else{
+
+                }
+
+            }
+        });
+        aSwitch3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                selectSwitchBtn = (Switch) buttonView;
+                if (buttonView.isPressed())
+                {
+                    postOrder(selectSwitchBtn);
+
+                }else{
+
+                }
+
+            }
+        });
+        aSwitch4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                selectSwitchBtn = (Switch) buttonView;
+                if (buttonView.isPressed())
+                {
+                    postOrder(selectSwitchBtn);
+
+                }else{
+
+                }
+
+            }
+        });
+        aSwitch5.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                selectSwitchBtn = (Switch) buttonView;
+                if (buttonView.isPressed())
+                {
+                    postOrder(selectSwitchBtn);
+
+                }else{
+
+                }
+
+            }
+        });
+        aSwitch6.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                selectSwitchBtn = (Switch) buttonView;
+                if (buttonView.isPressed())
+                {
+                    postOrder(selectSwitchBtn);
+
+                }else{
+
+                }
+
+            }
+        });
+        aSwitch0.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                selectSwitchBtn = (Switch) buttonView;
+                if (buttonView.isPressed())
+                {
+                    postOrder(selectSwitchBtn);
+
+                }else{
+
+                }
+
+            }
+        });
+
+    }
     /**
      * 网络访问
      */
+
+    public void postOrder(Switch switchbtn){
+        if (!switchbtn.isChecked()){
+            btnStatus = "0";
+        }else {
+            btnStatus = "1";
+        }
+        Gson gson=new Gson();
+        HashMap<String,Object> paramsMap = new HashMap<>();
+//                    HashMap<String,String> paramsMap1 = new HashMap<>();
+//                    paramsMap1.put("equipmentId",equipmentid);
+        paramsMap.put("equipmentId",equipmentid);
+        if (switchbtn.getTag().equals("0")){
+            paramsMap.put("tunnel","6");
+            paramsMap.put("topic","isAuto");
+        }else {
+            paramsMap.put("tunnel",switchbtn.getTag());
+            paramsMap.put("topic","switch");
+        }
+
+        paramsMap.put("tunnelValue",btnStatus);
+
+        paramsMap.put("userToken", SpUtils.GetConfigString(context,"userToken"));
+        String strEntity = gson.toJson(paramsMap);
+
+        RequestBody body = RequestBody.create(okhttp3.MediaType.parse("application/json;charset=UTF-8"),strEntity);
+
+        HashMap<String,String> headmap = new HashMap<>();
+        headmap.put("token", SpUtils.GetConfigString(context,"userToken"));
+        headmap.put("Content-Type","application/json");
+        progressDialog.show();
+        orderPersenter.PostOrder(body,headmap);
+    }
     public void netGetValue() {
 
         Gson gson=new Gson();
@@ -178,66 +299,79 @@ public class EquipmentDetailActivity extends AppCompatActivity implements OrderV
         HashMap<String,String> headmap = new HashMap<>();
         headmap.put("token", SpUtils.GetConfigString(context,"userToken"));
         headmap.put("Content-Type","application/json");
-
+        progressDialog = ProgressDialog.show(context,"Loading....","正在获取设备信息");
         equipmentStatusPersenter.GetEquipmentStatus(body,headmap);
     }
 
     /**
      * 网络访问回调
-     * @param call
-     * @param response
+     * @param
+     * @param
      * @throws IOException
      */
     @Override
     public void GetEquipmentStatusSuccess(EquipmentstatusModel equipmentstatusModel) {
+        Toast.makeText(context, equipmentstatusModel.getErrorMessage(), Toast.LENGTH_LONG).show();
 //        String str1 = (String)equipmentstatusModel.getData().getTemperature();
-        textview1.setText(String.valueOf(equipmentstatusModel.getData().getTemperature()) );
-        textview2.setText(String.valueOf(equipmentstatusModel.getData().getHumidity()));
+//        温度
+        textview1.setText(String.valueOf(equipmentstatusModel.getData().getTemperature()) + "℃");
+//        湿度
+        textview2.setText(String.valueOf(equipmentstatusModel.getData().getHumidity()) + "%");
 //        氮气
-        textview3.setText(String.valueOf(equipmentstatusModel.getData().getTemperature()));
+        textview3.setText(String.valueOf(equipmentstatusModel.getData().getAmmoniaContent()));
 //        风速
-        textview4.setText(String.valueOf(equipmentstatusModel.getData().getTemperature()));
+        textview4.setText(String.valueOf(equipmentstatusModel.getData().getGasFlow()));
 //        硫化氢
-        textview5.setText(String.valueOf(equipmentstatusModel.getData().getTemperature()));
+        textview5.setText(String.valueOf(equipmentstatusModel.getData().getHydrogenSulfideContent()));
+//        co2
         textview6.setText(String.valueOf(equipmentstatusModel.getData().getCarbonDioxideContent()));
 
         if (equipmentstatusModel.isSuccess()){
 
             if (equipmentstatusModel.getData().getSwitch1().equals("0")){
-                aSwitch1.setChecked(true);
-            }else {
                 aSwitch1.setChecked(false);
-            }
-            if (equipmentstatusModel.getData().getSwitch2() == "0"){
-                aSwitch2.setChecked(true);
+//                aSwitch1.isChecked();
             }else {
+                aSwitch1.setChecked(true);
+            }
+            if (equipmentstatusModel.getData().getSwitch2().equals("0")){
                 aSwitch2.setChecked(false);
-            }
-            if (equipmentstatusModel.getData().getSwitch3() == "0"){
-                aSwitch3.setChecked(true);
             }else {
+                aSwitch2.setChecked(true);
+            }
+            if (equipmentstatusModel.getData().getSwitch3().equals("0")){
                 aSwitch3.setChecked(false);
-            }
-            if (equipmentstatusModel.getData().getSwitch4() == "0"){
-                aSwitch4.setChecked(true);
             }else {
+                aSwitch3.setChecked(true);
+            }
+            if (equipmentstatusModel.getData().getSwitch4().equals("0")){
                 aSwitch4.setChecked(false);
-            }
-            if (equipmentstatusModel.getData().getSwitch5() == "1"){
-                aSwitch5.setChecked(true);
             }else {
+                aSwitch4.setChecked(true);
+            }
+            if (equipmentstatusModel.getData().getSwitch5().equals("0")){
                 aSwitch5.setChecked(false);
-            }
-            if (equipmentstatusModel.getData().getSwitch6() == "0"){
-                aSwitch6.setChecked(true);
             }else {
-                aSwitch6.setChecked(false);
+                aSwitch5.setChecked(true);
             }
-//        if (equipmentstatusModel.getData().getIsAuto() == "0"){
-//            aSwitch6.setChecked(true);
-//        }else {
-//            aSwitch6.setChecked(false);
-//        }
+            if (equipmentstatusModel.getData().getSwitch6().equals("0")){
+                aSwitch6.setChecked(false);
+            }else {
+                aSwitch6.setChecked(true);
+            }
+        if (equipmentstatusModel.getData().getIsAuto().equals("0")){
+            aSwitch0.setChecked(false);
+        }else {
+            aSwitch0.setChecked(true);
+        }
+            setSwitchListener();
+            if (progressDialog != null) {
+                progressDialog.cancel();
+            }
+        }else {
+            if (progressDialog != null) {
+                progressDialog.cancel();
+            }
         }
 
 
@@ -250,7 +384,23 @@ public class EquipmentDetailActivity extends AppCompatActivity implements OrderV
 
     @Override
     public void OrderSuccess(OrderModel gatherModel) {
+        Toast.makeText(context, gatherModel.getErrorMessage(), Toast.LENGTH_LONG).show();
+        if (gatherModel.isSuccess()){
 
+            if (progressDialog != null) {
+                progressDialog.cancel();
+            }
+        }else {
+            if (progressDialog != null) {
+                progressDialog.cancel();
+            }
+            if (btnStatus == "0"){
+                selectSwitchBtn.setChecked(false);
+            }else {
+                selectSwitchBtn.setChecked(true);
+            }
+
+        }
     }
 
     @Override

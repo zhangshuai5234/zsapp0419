@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".yunwei.view.EquipmentDetailActivity"
-   >
+>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -541,6 +541,7 @@
 
                     <Switch
                         android:id="@+id/switch0"
+                        android:tag="0"
                         android:layout_width="80dp"
                         android:layout_height="30dp"
                         android:layout_alignParentEnd="true"
@@ -554,18 +555,9 @@
                         android:textOn="手动"
                         android:textSize="16dp"
                         android:thumb="@drawable/thumb"
-                        android:track="@drawable/track" />
-                    <TextView
-                        android:id="@+id/planttime_tv1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginRight="10dp"
-                        android:text="2018-08-09  17:05"
-                        android:textColor="@color/item_graytext4"
-                        android:textSize="13dp"
-                        android:visibility="gone" />
+                        android:track="@drawable/track"
+                      />
+
 
 
                 </RelativeLayout>
@@ -580,6 +572,7 @@
 
                     <Switch
                         android:id="@+id/switch1"
+                        android:tag="1"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="10dp"
@@ -605,6 +598,7 @@
                         android:visibility="gone"/>
                     <Switch
                         android:id="@+id/switch2"
+                        android:tag="2"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="10dp"
@@ -628,6 +622,7 @@
 
                     <Switch
                         android:id="@+id/switch3"
+                        android:tag="3"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="10dp"
@@ -653,6 +648,7 @@
                         android:visibility="gone"/>
                     <Switch
                         android:id="@+id/switch4"
+                        android:tag="4"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="10dp"
@@ -679,6 +675,7 @@
 
                     <Switch
                         android:id="@+id/switch5"
+                        android:tag="5"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="10dp"
@@ -704,6 +701,7 @@
                         android:visibility="gone"/>
                     <Switch
                         android:id="@+id/switch6"
+                        android:tag="6"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="10dp"
