@@ -7,7 +7,9 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Switch;
@@ -67,6 +69,10 @@ public class EquipmentDetailActivity extends AppCompatActivity implements OrderV
     TextView textview4;
     TextView textview5;
     TextView textview6;
+    EditText bianpin_edit1;
+    EditText bianpin_edit2;
+    Button updatebtn1;
+    Button updatebtn2;
 
     Switch selectSwitchBtn;
     String btnStatus = "0";
@@ -111,7 +117,7 @@ public class EquipmentDetailActivity extends AppCompatActivity implements OrderV
         title_lab.setText(titlelab);
 
         rigth_btn.setVisibility(View.VISIBLE);
-        rigth_btn.setText("新增主机");
+        rigth_btn.setText("参数配置");
         Drawable drawable = getResources().getDrawable(R.drawable.add_default);
 //        drawable.setBounds(0,0,17,17);
         drawable.setBounds(0,0,dip2px(context,17),dip2px(context,17));
@@ -125,7 +131,7 @@ public class EquipmentDetailActivity extends AppCompatActivity implements OrderV
                 intent.putExtra("name",titlelab);
                 intent.putExtra("phone",phone_num);
 
-                intent.setClass(context,AddCarinfoActivity.class);
+                intent.setClass(context,EquipmentConfiglActivity.class);
                 context.startActivity(intent);
             }
         });
@@ -144,8 +150,55 @@ public class EquipmentDetailActivity extends AppCompatActivity implements OrderV
         aSwitch6 = findViewById(R.id.switch6);
         aSwitch0 = findViewById(R.id.switch0);
 
+        bianpin_edit1 = findViewById(R.id.bianpin_edit1);
+        bianpin_edit2 = findViewById(R.id.bianpin_edit2);
+        updatebtn1 = findViewById(R.id.update_btn1);
+        updatebtn2 = findViewById(R.id.update_btn2);
+        updatebtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                提交变频器1的数值
+                uuivertornetValue(bianpin_edit1.getText().toString());
+            }
+        });
+        updatebtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                提交变频器2的数值
+                uuivertornetValue(bianpin_edit2.getText().toString());
+            }
+        });
+
+    }
+    /**
+     *  变频器网络访问方法
+     *  uuivertornetValue()
+     * **/
+    public void uuivertornetValue(String editstr){
+
+
+        Gson gson=new Gson();
+        HashMap<String,Object> paramsMap = new HashMap<>();
+        paramsMap.put("equipmentId",equipmentid);
+        paramsMap.put("tunnel","1");
+        paramsMap.put("topic","uuivertor");
+        paramsMap.put("tunnelValue",editstr);
+        paramsMap.put("userToken", SpUtils.GetConfigString(context,"userToken"));
+        String strEntity = gson.toJson(paramsMap);
+        RequestBody body = RequestBody.create(okhttp3.MediaType.parse("application/json;charset=UTF-8"),strEntity);
+
+        HashMap<String,String> headmap = new HashMap<>();
+        headmap.put("token", SpUtils.GetConfigString(context,"userToken"));
+        headmap.put("Content-Type","application/json");
+
+        progressDialog.show();
+        orderPersenter.PostOrder(body,headmap);
     }
 
+    /**
+     *  switch 的监听方法
+     *  setSwitchListener()
+     * **/
     public  void  setSwitchListener() {
 
         aSwitch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -379,7 +432,8 @@ public class EquipmentDetailActivity extends AppCompatActivity implements OrderV
 
     @Override
     public void GetEquipmentStatusError(Throwable e) {
-
+        Toast.makeText(context, "网络访问失败", Toast.LENGTH_LONG).show();
+        progressDialog.cancel();
     }
 
     @Override
@@ -405,7 +459,8 @@ public class EquipmentDetailActivity extends AppCompatActivity implements OrderV
 
     @Override
     public void OrderError(Throwable e) {
-
+        Toast.makeText(context, "网络访问失败", Toast.LENGTH_LONG).show();
+        progressDialog.cancel();
     }
     //    public void success(Call call, Response response) throws IOException {
 ////        Log.d("1", "onResponse: "onResponse + response.body().string());

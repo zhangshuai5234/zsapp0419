@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/actionbar_layout"/>
+    <Button
+        android:id="@+id/logout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="退出登录"
+        android:textColor="@color/white"
+        android:background="@mipmap/top"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="100dp"
+        android:visibility="gone"
+        />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="0dp"
+                    android:layout_weight="2"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="氮气含量上下限"
+                        android:textSize="17dp"
+                        android:textColor="@color/black_simple"
+                        android:layout_marginLeft="20dp"
+                        android:layout_centerInParent="true"
+                        />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    >
+                    <EditText
+                        android:id="@+id/ammoniaContentLowerLimit"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/editviewbg"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textSize="14dp" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    >
+                    <EditText
+                        android:id="@+id/ammoniaContentUpperLimit"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/editviewbg"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textSize="14dp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="0dp"
+                    android:layout_weight="2"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CO2含量上下限"
+                        android:textSize="17dp"
+                        android:textColor="@color/black_simple"
+                        android:layout_marginLeft="20dp"
+                        android:layout_centerInParent="true"
+                        />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    >
+                    <EditText
+                        android:id="@+id/carbonDioxideContentLowerLimit"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/editviewbg"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textSize="14dp" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    >
+                    <EditText
+                        android:id="@+id/carbonDioxideContentUpperLimit"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/editviewbg"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textSize="14dp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="0dp"
+                    android:layout_weight="2"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="粉尘含量上下限"
+                        android:textSize="17dp"
+                        android:textColor="@color/black_simple"
+                        android:layout_marginLeft="20dp"
+                        android:layout_centerInParent="true"
+                        />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    >
+                    <EditText
+                        android:id="@+id/dustContentLowerLimit"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/editviewbg"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textSize="14dp" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    >
+                    <EditText
+                        android:id="@+id/dustContentUpperLimit"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/editviewbg"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textSize="14dp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="0dp"
+                    android:layout_weight="2"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="频率上下限"
+                        android:textSize="17dp"
+                        android:textColor="@color/black_simple"
+                        android:layout_marginLeft="20dp"
+                        android:layout_centerInParent="true"
+                        />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    >
+                    <EditText
+                        android:id="@+id/frequencyLowerLimit"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/editviewbg"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textSize="14dp" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    >
+                    <EditText
+                        android:id="@+id/frequencyUpperLimit"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/editviewbg"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textSize="14dp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="0dp"
+                    android:layout_weight="2"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="气体流量上下限"
+                        android:textSize="17dp"
+                        android:textColor="@color/black_simple"
+                        android:layout_marginLeft="20dp"
+                        android:layout_centerInParent="true"
+                        />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    >
+                    <EditText
+                        android:id="@+id/gasFlowLowerLimit"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/editviewbg"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textSize="14dp" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    >
+                    <EditText
+                        android:id="@+id/gasFlowUpperLimit"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/editviewbg"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textSize="14dp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="0dp"
+                    android:layout_weight="2"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="湿度上下限"
+                        android:textSize="17dp"
+                        android:textColor="@color/black_simple"
+                        android:layout_marginLeft="20dp"
+                        android:layout_centerInParent="true"
+                        />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    >
+                    <EditText
+                        android:id="@+id/humidityLowerLimit"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/editviewbg"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textSize="14dp" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    >
+                    <EditText
+                        android:id="@+id/humidityUpperLimit"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/editviewbg"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textSize="14dp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="0dp"
+                    android:layout_weight="2"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="硫化氢含量上下限"
+                        android:textSize="17dp"
+                        android:textColor="@color/black_simple"
+                        android:layout_marginLeft="20dp"
+                        android:layout_centerInParent="true"
+                        />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    >
+                    <EditText
+                        android:id="@+id/hydrogenSulfideContentLowerLimit"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/editviewbg"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textSize="14dp" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    >
+                    <EditText
+                        android:id="@+id/hydrogenSulfideContentUpperLimit"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/editviewbg"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textSize="14dp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="0dp"
+                    android:layout_weight="2"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="温度上下限"
+                        android:textSize="17dp"
+                        android:textColor="@color/black_simple"
+                        android:layout_marginLeft="20dp"
+                        android:layout_centerInParent="true"
+                        />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    >
+                    <EditText
+                        android:id="@+id/temperatureLowerLimit"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/editviewbg"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textSize="14dp" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    >
+                    <EditText
+                        android:id="@+id/temperatureUpperLimit"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/editviewbg"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textSize="14dp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+                <Button
+                    android:id="@+id/update_btn1"
+                    android:layout_width="280dp"
+                    android:layout_height="40dp"
+
+                    android:background="@drawable/bg_login_bt"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="50dp"
+                    android:text="提交"
+                    android:textColor="@color/white"
+
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+</LinearLayout>

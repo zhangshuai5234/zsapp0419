@@ -505,15 +505,20 @@
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="511dp"
-                android:background="@color/white"
-                android:orientation="vertical">
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/broder"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="14dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
-                    android:layout_marginLeft="27dp"
                     android:orientation="horizontal"
 
                     >
@@ -551,8 +556,8 @@
                         android:layout_centerInParent="true"
                         android:showText="true"
                         android:text="设备名"
-                        android:textOff="自动"
-                        android:textOn="手动"
+                        android:textOff="手动"
+                        android:textOn="自动"
                         android:textSize="16dp"
                         android:thumb="@drawable/thumb"
                         android:track="@drawable/track"
@@ -576,7 +581,7 @@
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="10dp"
-                        android:text="设备1"
+                        android:text="风扇1"
                         android:textSize="16dp"
                         android:textOn="开"
                         android:textOff="关"
@@ -586,16 +591,7 @@
                         android:track="@drawable/track"
                         android:layout_weight="1"
                         android:showText="true"/>
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="20dp"
-                        android:text="设备名字"
-                        android:layout_weight="1"
-                        android:textColor="@color/black_deep"
-                        android:textSize="15dp"
-                        android:layout_marginTop="10dp"
-                        android:paddingLeft="15dp"
-                        android:visibility="gone"/>
+
                     <Switch
                         android:id="@+id/switch2"
                         android:tag="2"
@@ -603,7 +599,7 @@
                         android:layout_height="40dp"
                         android:layout_marginTop="10dp"
                         android:paddingRight="20dp"
-                        android:text="设备名"
+                        android:text="风扇2"
                         android:textSize="16dp"
                         android:textOn="开"
                         android:textOff="关"
@@ -626,7 +622,7 @@
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="10dp"
-                        android:text="设备1"
+                        android:text="风扇3"
                         android:textSize="16dp"
                         android:textOn="开"
                         android:textOff="关"
@@ -636,16 +632,7 @@
                         android:track="@drawable/track"
                         android:layout_weight="1"
                         android:showText="true"/>
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="20dp"
-                        android:text="设备名字"
-                        android:layout_weight="1"
-                        android:textColor="@color/black_deep"
-                        android:textSize="15dp"
-                        android:layout_marginTop="10dp"
-                        android:paddingLeft="15dp"
-                        android:visibility="gone"/>
+
                     <Switch
                         android:id="@+id/switch4"
                         android:tag="4"
@@ -653,7 +640,7 @@
                         android:layout_height="40dp"
                         android:layout_marginTop="10dp"
                         android:paddingRight="20dp"
-                        android:text="设备名"
+                        android:text="风扇4"
                         android:textSize="16dp"
                         android:textOn="开"
                         android:textOff="关"
@@ -679,7 +666,7 @@
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="10dp"
-                        android:text="设备1"
+                        android:text="风扇5"
                         android:textSize="16dp"
                         android:textOn="开"
                         android:textOff="关"
@@ -689,16 +676,7 @@
                         android:track="@drawable/track"
                         android:layout_weight="1"
                         android:showText="true"/>
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="20dp"
-                        android:text="设备名字"
-                        android:layout_weight="1"
-                        android:textColor="@color/black_deep"
-                        android:textSize="15dp"
-                        android:layout_marginTop="10dp"
-                        android:paddingLeft="15dp"
-                        android:visibility="gone"/>
+
                     <Switch
                         android:id="@+id/switch6"
                         android:tag="6"
@@ -706,7 +684,7 @@
                         android:layout_height="40dp"
                         android:layout_marginTop="10dp"
                         android:paddingRight="20dp"
-                        android:text="设备名"
+                        android:text="水泵"
                         android:textSize="16dp"
                         android:textOn="开"
                         android:textOff="关"
@@ -722,6 +700,204 @@
                     android:layout_height="0.5dp"
                     android:background="#ffe6e6e6" />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/broder"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="14dp">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal"
+                    android:paddingBottom="14dp">
+
+
+                    <View
+                        android:id="@+id/view_icon2"
+                        android:layout_width="5dp"
+                        android:layout_height="12dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/green_icon" />
+
+                    <TextView
+                        android:id="@+id/peng_name2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_toRightOf="@+id/view_icon2"
+                        android:text="变频器数值调节"
+                        android:textColor="@color/item_graytext3"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/planttime_tv2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="10dp"
+                        android:text="2018-08-09  17:05"
+                        android:textColor="@color/item_graytext4"
+                        android:textSize="13dp"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="324dp"
+                    android:layout_height="1dp"
+                    android:background="#ffe6e6e6" />
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:layout_weight="1">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="15dp"
+                                >
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="变频风机1"
+                                    android:textSize="17dp"
+                                    android:textColor="@color/black_simple"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_centerInParent="true"
+                                    />
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="15dp"
+                                >
+                                <EditText
+                                    android:id="@+id/bianpin_edit1"
+                                    android:layout_width="80dp"
+                                    android:layout_height="25dp"
+                                    android:layout_centerInParent="true"
+
+                                    android:layout_marginLeft="15dp"
+                                    android:background="@drawable/editviewbg"
+                                    android:inputType="number"
+                                    android:maxLength="6"
+                                    android:textSize="14dp" />
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="15dp"
+                                >
+                                <Button
+                                    android:id="@+id/update_btn1"
+                                    android:layout_width="80dp"
+                                    android:layout_height="30dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/bg_login_bt"
+                                    android:layout_marginLeft="15dp"
+                                    android:text="提交"
+                                    android:textColor="@color/white"
+
+                                    android:inputType="number"
+                                    android:maxLength="6"
+                                    android:textSize="16dp" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:layout_weight="1">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="15dp"
+                                >
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="变频风机2"
+                                    android:textSize="17dp"
+                                    android:textColor="@color/black_simple"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_centerInParent="true"
+                                    />
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="15dp"
+                                >
+                                <EditText
+                                    android:id="@+id/bianpin_edit2"
+                                    android:layout_width="80dp"
+                                    android:layout_height="25dp"
+                                    android:layout_centerInParent="true"
+
+                                    android:layout_marginLeft="15dp"
+                                    android:background="@drawable/editviewbg"
+                                    android:inputType="number"
+                                    android:maxLength="6"
+                                    android:textSize="14dp" />
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="15dp"
+                                >
+                                <Button
+                                    android:id="@+id/update_btn2"
+                                    android:layout_width="80dp"
+                                    android:layout_height="30dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/bg_login_bt"
+                                    android:layout_marginLeft="15dp"
+                                    android:text="提交"
+                                    android:textColor="@color/white"
+
+                                    android:inputType="number"
+                                    android:maxLength="6"
+                                    android:textSize="16dp" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#ffe6e6e6"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+
         </LinearLayout>
 
 

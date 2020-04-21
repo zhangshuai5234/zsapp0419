@@ -41,6 +41,7 @@
         <activity android:name=".yunwei.activity.GatherActivity" />
         <activity android:name=".yunwei.activity.ProcessActivity" />
         <activity android:name=".yunwei.view.EquipmentDetailActivity" />
+        <activity android:name=".yunwei.view.EquipmentConfiglActivity"/>
     </application>
 
 </manifest>
