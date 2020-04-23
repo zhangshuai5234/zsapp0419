@@ -21,6 +21,7 @@ import com.example.pc.xumuapp.yunwei.model.GatherModel;
 import com.example.pc.xumuapp.yunwei.model.GongdanModel;
 import com.example.pc.xumuapp.yunwei.model.OrderModel;
 import com.example.pc.xumuapp.yunwei.model.PackModel;
+import com.example.pc.xumuapp.yunwei.model.ParameterModel;
 import com.example.pc.xumuapp.yunwei.model.PlantModel;
 import com.example.pc.xumuapp.yunwei.model.ProcessModel;
 
@@ -78,6 +79,9 @@ public interface ApiService {
     @POST("equipment-status/getByEquipmentId")
     Observable<EquipmentstatusModel>  getEquipmentStatus(@HeaderMap Map<String, String> headers, @Body RequestBody loginjson);
 
+    //    设备参数查询
+    @POST("equipment-status/getByEquipmentId")
+    Observable<ParameterModel>  getParameter(@HeaderMap Map<String, String> headers, @Body RequestBody loginjson);
 
 
 
@@ -85,7 +89,9 @@ public interface ApiService {
 
 
 
-//    未完成工单列表查询
+
+
+    //    未完成工单列表查询
     @POST("task/getList")
     Observable<GongdanModel>  getGondanList(@HeaderMap Map<String, String> headers, @Body RequestBody loginjson);
 //    查询种植列表

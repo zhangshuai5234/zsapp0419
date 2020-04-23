@@ -23,8 +23,10 @@ import com.example.pc.xumuapp.newAdded.model.CarlistdetaliModel;
 import com.example.pc.xumuapp.utils.SpUtils;
 import com.example.pc.xumuapp.yunwei.model.EquipmentstatusModel;
 import com.example.pc.xumuapp.yunwei.model.OrderModel;
+import com.example.pc.xumuapp.yunwei.model.ParameterModel;
 import com.example.pc.xumuapp.yunwei.presenter.EquipmentStatusPersenter;
 import com.example.pc.xumuapp.yunwei.presenter.OrderPersenter;
+import com.example.pc.xumuapp.yunwei.presenter.ParameterPersenter;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -34,7 +36,7 @@ import java.util.HashMap;
 import okhttp3.RequestBody;
 
 
-public class EquipmentConfiglActivity extends AppCompatActivity implements OrderView{
+public class EquipmentConfiglActivity extends AppCompatActivity implements ParameterView{
 
 
     private Context context;
@@ -46,31 +48,29 @@ public class EquipmentConfiglActivity extends AppCompatActivity implements Order
     private String userCode = "";
     private String titlelab = "参数配置";
     private String phone_num = "";
-    Switch aSwitch1;
-    Switch aSwitch2;
-    Switch aSwitch3;
-    Switch aSwitch4;
-    Switch aSwitch5;
-    Switch aSwitch6;
-    Switch aSwitch0;
-    TextView textview1;
-    TextView textview2;
-    TextView textview3;
-    TextView textview4;
-    TextView textview5;
-    TextView textview6;
-    EditText bianpin_edit1;
-    EditText bianpin_edit2;
-    Button updatebtn1;
-    Button updatebtn2;
+    EditText ammoniaContentLowerLimit;
+    EditText ammoniaContentUpperLimit;
+    EditText carbonDioxideContentLowerLimit;
+    EditText carbonDioxideContentUpperLimit;
+    EditText dustContentLowerLimit;
+    EditText dustContentUpperLimit;
+    EditText frequencyLowerLimit;
+    EditText frequencyUpperLimit;
+    EditText gasFlowLowerLimit;
+    EditText gasFlowUpperLimit;
+    EditText humidityLowerLimit;
+    EditText humidityUpperLimit;
+    EditText hydrogenSulfideContentLowerLimit;
+    EditText hydrogenSulfideContentUpperLimit;
+    EditText temperatureLowerLimit;
+    EditText temperatureUpperLimit;
 
     Switch selectSwitchBtn;
     String btnStatus = "0";
 
     private ProgressDialog progressDialog;
 
-    private EquipmentStatusPersenter equipmentStatusPersenter = new EquipmentStatusPersenter(this);
-    private OrderPersenter orderPersenter = new OrderPersenter(this);
+    private ParameterPersenter parameterPersenter = new ParameterPersenter(this);
 
 
     @Override
@@ -81,7 +81,7 @@ public class EquipmentConfiglActivity extends AppCompatActivity implements Order
         context = this;
 
         Intent intent = getIntent();
-        equipmentid = intent.getStringExtra("equipmentid");
+        equipmentid = intent.getStringExtra("id");
 
 
         initview();
@@ -93,7 +93,22 @@ public class EquipmentConfiglActivity extends AppCompatActivity implements Order
      */
     public void initview(){
 
-
+        ammoniaContentLowerLimit = findViewById(R.id.ammoniaContentLowerLimit);
+        ammoniaContentUpperLimit = findViewById(R.id.ammoniaContentUpperLimit);
+        carbonDioxideContentLowerLimit = findViewById(R.id.carbonDioxideContentLowerLimit);
+        carbonDioxideContentUpperLimit = findViewById(R.id.carbonDioxideContentUpperLimit);
+        dustContentLowerLimit = findViewById(R.id.dustContentLowerLimit);
+        dustContentUpperLimit = findViewById(R.id.dustContentUpperLimit);
+        frequencyLowerLimit = findViewById(R.id.frequencyLowerLimit);
+        frequencyUpperLimit = findViewById(R.id.frequencyUpperLimit);
+        gasFlowLowerLimit = findViewById(R.id.gasFlowLowerLimit);
+        gasFlowUpperLimit = findViewById(R.id.gasFlowUpperLimit);
+        humidityLowerLimit = findViewById(R.id.humidityLowerLimit);
+        humidityUpperLimit = findViewById(R.id.humidityUpperLimit);
+        hydrogenSulfideContentLowerLimit = findViewById(R.id.hydrogenSulfideContentLowerLimit);
+        hydrogenSulfideContentUpperLimit = findViewById(R.id.hydrogenSulfideContentUpperLimit);
+        temperatureLowerLimit = findViewById(R.id.temperatureLowerLimit);
+        temperatureUpperLimit = findViewById(R.id.temperatureUpperLimit);
 
         back_btn = (ImageView) findViewById(R.id.iv_back);
         rigth_btn = (TextView) findViewById(R.id.nav_edit);
@@ -102,7 +117,7 @@ public class EquipmentConfiglActivity extends AppCompatActivity implements Order
         title_lab.setText(titlelab);
 
         rigth_btn.setVisibility(View.GONE);
-        rigth_btn.setText("新增主机");
+
         Drawable drawable = getResources().getDrawable(R.drawable.add_default);
 //        drawable.setBounds(0,0,17,17);
         drawable.setBounds(0,0,dip2px(context,17),dip2px(context,17));
@@ -151,7 +166,7 @@ public class EquipmentConfiglActivity extends AppCompatActivity implements Order
         headmap.put("Content-Type","application/json");
 
         progressDialog.show();
-        orderPersenter.PostOrder(body,headmap);
+        parameterPersenter.GetParameter(body,headmap);
     }
 
     /**
@@ -167,36 +182,7 @@ public class EquipmentConfiglActivity extends AppCompatActivity implements Order
      */
 
     public void postOrder(Switch switchbtn){
-        if (!switchbtn.isChecked()){
-            btnStatus = "0";
-        }else {
-            btnStatus = "1";
-        }
-        Gson gson=new Gson();
-        HashMap<String,Object> paramsMap = new HashMap<>();
-//                    HashMap<String,String> paramsMap1 = new HashMap<>();
-//                    paramsMap1.put("equipmentId",equipmentid);
-        paramsMap.put("equipmentId",equipmentid);
-        if (switchbtn.getTag().equals("0")){
-            paramsMap.put("tunnel","6");
-            paramsMap.put("topic","isAuto");
-        }else {
-            paramsMap.put("tunnel",switchbtn.getTag());
-            paramsMap.put("topic","switch");
-        }
 
-        paramsMap.put("tunnelValue",btnStatus);
-
-        paramsMap.put("userToken", SpUtils.GetConfigString(context,"userToken"));
-        String strEntity = gson.toJson(paramsMap);
-
-        RequestBody body = RequestBody.create(okhttp3.MediaType.parse("application/json;charset=UTF-8"),strEntity);
-
-        HashMap<String,String> headmap = new HashMap<>();
-        headmap.put("token", SpUtils.GetConfigString(context,"userToken"));
-        headmap.put("Content-Type","application/json");
-        progressDialog.show();
-        orderPersenter.PostOrder(body,headmap);
     }
     public void netGetValue() {
 
@@ -214,7 +200,7 @@ public class EquipmentConfiglActivity extends AppCompatActivity implements Order
         headmap.put("token", SpUtils.GetConfigString(context,"userToken"));
         headmap.put("Content-Type","application/json");
         progressDialog = ProgressDialog.show(context,"Loading....","正在获取设备信息");
-        equipmentStatusPersenter.GetEquipmentStatus(body,headmap);
+        parameterPersenter.GetParameter(body,headmap);
     }
 
     /**
@@ -224,28 +210,36 @@ public class EquipmentConfiglActivity extends AppCompatActivity implements Order
      * @throws IOException
      */
     @Override
-    public void GetEquipmentStatusSuccess(EquipmentstatusModel equipmentstatusModel) {
-        Toast.makeText(context, equipmentstatusModel.getErrorMessage(), Toast.LENGTH_LONG).show();
-
+    public void GetParameterSuccess(ParameterModel parameterModel) {
+        if (progressDialog != null) {
+            progressDialog.cancel();
+        }
+        if (parameterModel.getSuccess().equals("true")){
+            ammoniaContentLowerLimit.setText(parameterModel.getData().getAmmoniaContentLowerLimit());
+            ammoniaContentUpperLimit.setText(parameterModel.getData().getAmmoniaContentUpperLimit());
+            carbonDioxideContentLowerLimit.setText(parameterModel.getData().getCarbonDioxideContentLowerLimit());
+            carbonDioxideContentUpperLimit.setText(parameterModel.getData().getCarbonDioxideContentUpperLimit());
+            dustContentLowerLimit.setText(parameterModel.getData().getDustContentLowerLimit());
+            dustContentUpperLimit.setText(parameterModel.getData().getDustContentUpperLimit());
+            frequencyLowerLimit.setText(parameterModel.getData().getFrequencyLowerLimit());
+            frequencyUpperLimit.setText(parameterModel.getData().getFrequencyUpperLimit());
+            gasFlowLowerLimit.setText(parameterModel.getData().getGasFlowLowerLimit());
+            gasFlowUpperLimit.setText(parameterModel.getData().getGasFlowUpperLimit());
+            humidityLowerLimit.setText(parameterModel.getData().getHumidityLowerLimit());
+            humidityUpperLimit.setText(parameterModel.getData().getHumidityUpperLimit());
+            hydrogenSulfideContentLowerLimit.setText(parameterModel.getData().getHydrogenSulfideContentLowerLimit());
+            hydrogenSulfideContentUpperLimit.setText(parameterModel.getData().getHydrogenSulfideContentUpperLimit());
+            temperatureLowerLimit.setText(parameterModel.getData().getTemperatureLowerLimit());
+            temperatureUpperLimit.setText(parameterModel.getData().getTemperatureUpperLimit());
+        }
     }
 
     @Override
-    public void GetEquipmentStatusError(Throwable e) {
-        Toast.makeText(context, "网络访问失败", Toast.LENGTH_LONG).show();
-        progressDialog.cancel();
-    }
-
-    @Override
-    public void OrderSuccess(OrderModel gatherModel) {
-        Toast.makeText(context, gatherModel.getErrorMessage(), Toast.LENGTH_LONG).show();
+    public void GetParameterError(Throwable e) {
 
     }
 
-    @Override
-    public void OrderError(Throwable e) {
-        Toast.makeText(context, "网络访问失败", Toast.LENGTH_LONG).show();
-        progressDialog.cancel();
-    }
+
 
     /**
      dp转px方法

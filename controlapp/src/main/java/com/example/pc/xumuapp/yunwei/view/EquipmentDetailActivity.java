@@ -24,6 +24,7 @@ import com.example.pc.xumuapp.newAdded.model.CarlistdetaliModel;
 import com.example.pc.xumuapp.utils.SpUtils;
 import com.example.pc.xumuapp.yunwei.model.EquipmentstatusModel;
 import com.example.pc.xumuapp.yunwei.model.OrderModel;
+import com.example.pc.xumuapp.yunwei.model.ParameterModel;
 import com.example.pc.xumuapp.yunwei.presenter.EquipmentStatusPersenter;
 import com.example.pc.xumuapp.yunwei.presenter.OrderPersenter;
 import com.google.gson.Gson;
@@ -76,6 +77,7 @@ public class EquipmentDetailActivity extends AppCompatActivity implements OrderV
 
     Switch selectSwitchBtn;
     String btnStatus = "0";
+    String detailid = "" ;
 
     private ProgressDialog progressDialog;
 
@@ -128,7 +130,7 @@ public class EquipmentDetailActivity extends AppCompatActivity implements OrderV
             public void onClick(View v) {
 
                 Intent intent = new Intent();
-                intent.putExtra("name",titlelab);
+                intent.putExtra("id",equipmentid);
                 intent.putExtra("phone",phone_num);
 
                 intent.setClass(context,EquipmentConfiglActivity.class);
@@ -380,7 +382,7 @@ public class EquipmentDetailActivity extends AppCompatActivity implements OrderV
         textview6.setText(String.valueOf(equipmentstatusModel.getData().getCarbonDioxideContent()));
 
         if (equipmentstatusModel.isSuccess()){
-
+            detailid = equipmentstatusModel.getData().getId();
             if (equipmentstatusModel.getData().getSwitch1().equals("0")){
                 aSwitch1.setChecked(false);
 //                aSwitch1.isChecked();
@@ -462,47 +464,17 @@ public class EquipmentDetailActivity extends AppCompatActivity implements OrderV
         Toast.makeText(context, "网络访问失败", Toast.LENGTH_LONG).show();
         progressDialog.cancel();
     }
-    //    public void success(Call call, Response response) throws IOException {
-////        Log.d("1", "onResponse: "onResponse + response.body().string());
-//        try {
-//            JSONObject jsonObjects = new JSONObject(response.body().string());
-//            JSONObject jsondata = jsonObjects.getJSONObject("data");
-//            JSONArray jsonArray = jsondata.getJSONArray("fmUserCarList");
-//
-//            mainlist.clear();
-//
-//            for ( int i = 0; i < jsonArray.length(); i++){
-//                JSONObject jsonObject = (JSONObject) jsonArray.get(i);
-//                CarlistdetaliModel carlistdetaliModel = new CarlistdetaliModel();
-//                carlistdetaliModel.setCarId(jsonObject.getString("carId"));
-////                carlistdetaliModel.setTimeStr(jsonObject.getString("carId"));
-////                carListModel.setCarCount(jsonObject.getString("carId"));
-////                carListModel.setImgUrl(jsonObject.getString("carId"));
-//                mainlist.add(carlistdetaliModel);
-//            }
-//
-//        }catch (JSONException e){
-//            e.printStackTrace();
-//        }
-//        if (mainlist.size() != 0){
-//
-//
-//            mainlistview.post(new Runnable() {
-//                @Override
-//                public void run() {
-//
-//                    CarlistDetailAdapter adapter = new CarlistDetailAdapter(context,mainlist);
-//
-//                    mainlistview.setAdapter(adapter);
-//                }
-//            });
-//
-//        }
-//    }
-//
-//    public void failed(Call call, IOException e){
-//
-//    }
+
+    @Override
+    public void GetParameterError(Throwable e) {
+
+    }
+
+    @Override
+    public void GetParameterSuccess(ParameterModel parameterModel) {
+
+    }
+
     /**
      dp转px方法
      */
