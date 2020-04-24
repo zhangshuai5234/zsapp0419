@@ -82,12 +82,12 @@ public class EquipmentstatusModel {
          * uuivertor2 : 0
          */
 
-        private int ammoniaContent;
-        private int carbonDioxideContent;
+        private Double ammoniaContent;
+        private Double carbonDioxideContent;
         private String equipmentId;
-        private int gasFlow;
-        private int humidity;
-        private int hydrogenSulfideContent;
+        private Double gasFlow;
+        private Double humidity;
+        private Double hydrogenSulfideContent;
         private String id;
         private String isAuto;
         private String isOnline;
@@ -101,23 +101,23 @@ public class EquipmentstatusModel {
         private String switch4;
         private String switch5;
         private String switch6;
-        private int temperature;
+        private Double temperature;
         private int uuivertor1;
         private int uuivertor2;
 
-        public int getAmmoniaContent() {
+        public Double getAmmoniaContent() {
             return ammoniaContent;
         }
 
-        public void setAmmoniaContent(int ammoniaContent) {
+        public void setAmmoniaContent(Double ammoniaContent) {
             this.ammoniaContent = ammoniaContent;
         }
 
-        public int getCarbonDioxideContent() {
+        public Double getCarbonDioxideContent() {
             return carbonDioxideContent;
         }
 
-        public void setCarbonDioxideContent(int carbonDioxideContent) {
+        public void setCarbonDioxideContent(Double carbonDioxideContent) {
             this.carbonDioxideContent = carbonDioxideContent;
         }
 
@@ -129,27 +129,27 @@ public class EquipmentstatusModel {
             this.equipmentId = equipmentId;
         }
 
-        public int getGasFlow() {
+        public Double getGasFlow() {
             return gasFlow;
         }
 
-        public void setGasFlow(int gasFlow) {
+        public void setGasFlow(Double gasFlow) {
             this.gasFlow = gasFlow;
         }
 
-        public int getHumidity() {
+        public Double getHumidity() {
             return humidity;
         }
 
-        public void setHumidity(int humidity) {
+        public void setHumidity(Double humidity) {
             this.humidity = humidity;
         }
 
-        public int getHydrogenSulfideContent() {
+        public Double getHydrogenSulfideContent() {
             return hydrogenSulfideContent;
         }
 
-        public void setHydrogenSulfideContent(int hydrogenSulfideContent) {
+        public void setHydrogenSulfideContent(Double hydrogenSulfideContent) {
             this.hydrogenSulfideContent = hydrogenSulfideContent;
         }
 
@@ -257,11 +257,11 @@ public class EquipmentstatusModel {
             this.switch6 = switch6;
         }
 
-        public int getTemperature() {
+        public Double getTemperature() {
             return temperature;
         }
 
-        public void setTemperature(int temperature) {
+        public void setTemperature(Double temperature) {
             this.temperature = temperature;
         }
 

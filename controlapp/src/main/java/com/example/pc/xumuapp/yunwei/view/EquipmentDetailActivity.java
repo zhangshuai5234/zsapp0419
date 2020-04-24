@@ -443,6 +443,15 @@ public class EquipmentDetailActivity extends AppCompatActivity implements OrderV
         Toast.makeText(context, gatherModel.getErrorMessage(), Toast.LENGTH_LONG).show();
         if (gatherModel.isSuccess()){
 
+            if (gatherModel.getData()!=null){
+
+            }else {
+                if (btnStatus == "0"){
+                    selectSwitchBtn.setChecked(false);
+                }else {
+                    selectSwitchBtn.setChecked(true);
+                }
+            }
             if (progressDialog != null) {
                 progressDialog.cancel();
             }
@@ -462,6 +471,11 @@ public class EquipmentDetailActivity extends AppCompatActivity implements OrderV
     @Override
     public void OrderError(Throwable e) {
         Toast.makeText(context, "网络访问失败", Toast.LENGTH_LONG).show();
+        if (btnStatus == "0"){
+            selectSwitchBtn.setChecked(false);
+        }else {
+            selectSwitchBtn.setChecked(true);
+        }
         progressDialog.cancel();
     }
 

@@ -24,9 +24,11 @@ import com.example.pc.xumuapp.utils.SpUtils;
 import com.example.pc.xumuapp.yunwei.model.EquipmentstatusModel;
 import com.example.pc.xumuapp.yunwei.model.OrderModel;
 import com.example.pc.xumuapp.yunwei.model.ParameterModel;
+import com.example.pc.xumuapp.yunwei.model.SubmitParameterModel;
 import com.example.pc.xumuapp.yunwei.presenter.EquipmentStatusPersenter;
 import com.example.pc.xumuapp.yunwei.presenter.OrderPersenter;
 import com.example.pc.xumuapp.yunwei.presenter.ParameterPersenter;
+import com.example.pc.xumuapp.yunwei.presenter.SubmitParameterPersenter;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -64,14 +66,17 @@ public class EquipmentConfiglActivity extends AppCompatActivity implements Param
     EditText hydrogenSulfideContentUpperLimit;
     EditText temperatureLowerLimit;
     EditText temperatureUpperLimit;
+    Button submitBtn;
 
     Switch selectSwitchBtn;
     String btnStatus = "0";
 
+    String parameterId = "";
+
     private ProgressDialog progressDialog;
 
     private ParameterPersenter parameterPersenter = new ParameterPersenter(this);
-
+    private SubmitParameterPersenter submitParameterPersenter = new SubmitParameterPersenter(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +115,14 @@ public class EquipmentConfiglActivity extends AppCompatActivity implements Param
         temperatureLowerLimit = findViewById(R.id.temperatureLowerLimit);
         temperatureUpperLimit = findViewById(R.id.temperatureUpperLimit);
 
+        submitBtn = findViewById(R.id.update_btn1);
+        submitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SubmitParameter();
+            }
+        });
+
         back_btn = (ImageView) findViewById(R.id.iv_back);
         rigth_btn = (TextView) findViewById(R.id.nav_edit);
         title_lab = (TextView) findViewById(R.id.nav_title);
@@ -145,18 +158,31 @@ public class EquipmentConfiglActivity extends AppCompatActivity implements Param
 
     }
     /**
-     *  变频器网络访问方法
+     *  设置设备参数网络访问
      *  uuivertornetValue()
      * **/
-    public void uuivertornetValue(String editstr){
-
+    public void SubmitParameter(){
 
         Gson gson=new Gson();
         HashMap<String,Object> paramsMap = new HashMap<>();
-        paramsMap.put("equipmentId",equipmentid);
-        paramsMap.put("tunnel","1");
-        paramsMap.put("topic","uuivertor");
-        paramsMap.put("tunnelValue",editstr);
+        paramsMap.put("ammoniaContentLowerLimit",ammoniaContentLowerLimit.getText().toString());
+        paramsMap.put("ammoniaContentUpperLimit",ammoniaContentUpperLimit.getText().toString());
+        paramsMap.put("carbonDioxideContentLowerLimit",carbonDioxideContentLowerLimit.getText().toString());
+        paramsMap.put("carbonDioxideContentUpperLimit",carbonDioxideContentUpperLimit.getText().toString());
+        paramsMap.put("dustContentLowerLimit",dustContentLowerLimit.getText().toString());
+        paramsMap.put("dustContentUpperLimit",dustContentUpperLimit.getText().toString());
+        paramsMap.put("frequencyLowerLimit",frequencyLowerLimit.getText().toString());
+        paramsMap.put("frequencyUpperLimit",frequencyUpperLimit.getText().toString());
+        paramsMap.put("gasFlowLowerLimit",gasFlowLowerLimit.getText().toString());
+        paramsMap.put("gasFlowUpperLimit",gasFlowUpperLimit.getText().toString());
+        paramsMap.put("humidityLowerLimit",humidityLowerLimit.getText().toString());
+        paramsMap.put("humidityUpperLimit",humidityUpperLimit.getText().toString());
+        paramsMap.put("hydrogenSulfideContentLowerLimit",hydrogenSulfideContentLowerLimit.getText().toString());
+        paramsMap.put("hydrogenSulfideContentUpperLimit",hydrogenSulfideContentUpperLimit.getText().toString());
+        paramsMap.put("temperatureLowerLimit",temperatureLowerLimit.getText().toString());
+        paramsMap.put("temperatureUpperLimit",temperatureUpperLimit.getText().toString());
+        paramsMap.put("id",parameterId);
+
         paramsMap.put("userToken", SpUtils.GetConfigString(context,"userToken"));
         String strEntity = gson.toJson(paramsMap);
         RequestBody body = RequestBody.create(okhttp3.MediaType.parse("application/json;charset=UTF-8"),strEntity);
@@ -166,7 +192,7 @@ public class EquipmentConfiglActivity extends AppCompatActivity implements Param
         headmap.put("Content-Type","application/json");
 
         progressDialog.show();
-        parameterPersenter.GetParameter(body,headmap);
+        submitParameterPersenter.PostParameter(body,headmap);
     }
 
     /**
@@ -181,9 +207,6 @@ public class EquipmentConfiglActivity extends AppCompatActivity implements Param
      * 网络访问
      */
 
-    public void postOrder(Switch switchbtn){
-
-    }
     public void netGetValue() {
 
         Gson gson=new Gson();
@@ -215,6 +238,7 @@ public class EquipmentConfiglActivity extends AppCompatActivity implements Param
             progressDialog.cancel();
         }
         if (parameterModel.getSuccess().equals("true")){
+            parameterId = parameterModel.getData().getId();
             ammoniaContentLowerLimit.setText(parameterModel.getData().getAmmoniaContentLowerLimit());
             ammoniaContentUpperLimit.setText(parameterModel.getData().getAmmoniaContentUpperLimit());
             carbonDioxideContentLowerLimit.setText(parameterModel.getData().getCarbonDioxideContentLowerLimit());
@@ -234,12 +258,40 @@ public class EquipmentConfiglActivity extends AppCompatActivity implements Param
         }
     }
 
+
     @Override
-    public void GetParameterError(Throwable e) {
+    public void PostParameterSuccess(SubmitParameterModel parameterModel) {
+        if (progressDialog != null) {
+            progressDialog.cancel();
+        }
+        if (parameterModel.getSuccess().equals("true")){
+            Toast.makeText(context, parameterModel.getErrorMessage(), Toast.LENGTH_LONG).show();
+        }else {
+            Toast.makeText(context, parameterModel.getErrorMessage(), Toast.LENGTH_LONG).show();
+        }
 
     }
 
 
+    @Override
+    public void GetParameterError(Throwable e) {
+        if (progressDialog != null) {
+            progressDialog.cancel();
+        }
+
+            Toast.makeText(context,"网络访问失败", Toast.LENGTH_LONG).show();
+
+    }
+
+    @Override
+    public void PostParameterError(Throwable e) {
+        if (progressDialog != null) {
+            progressDialog.cancel();
+        }
+
+            Toast.makeText(context,"网络访问失败", Toast.LENGTH_LONG).show();
+
+    }
 
     /**
      dp转px方法

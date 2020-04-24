@@ -11,6 +11,7 @@
         android:layout_width="fill_parent"
         android:layout_height="48dp"
         android:background="@mipmap/top"
+        android:visibility="gone"
         android:clickable="true" >
         <TextView
             android:layout_width="wrap_content"
@@ -24,8 +25,8 @@
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="180dp"
-        android:background="@drawable/head2"
+        android:layout_height="200dp"
+        android:background="@drawable/headpci1"
         />
 
     <GridView

@@ -24,6 +24,7 @@ import com.example.pc.xumuapp.yunwei.model.PackModel;
 import com.example.pc.xumuapp.yunwei.model.ParameterModel;
 import com.example.pc.xumuapp.yunwei.model.PlantModel;
 import com.example.pc.xumuapp.yunwei.model.ProcessModel;
+import com.example.pc.xumuapp.yunwei.model.SubmitParameterModel;
 
 import java.util.Map;
 
@@ -50,7 +51,9 @@ public interface ApiService {
     //    http://39.107.152.122/fm/a/login?__login=true&__ajax=json&username=15040070175&password=123456
 
 //    String API_SERVER_URL = "http://39.107.152.122:8980/zhzz/v3/app/api/";
-    String API_SERVER_URL = "http://49.4.71.112:8090/iahs/";
+//    String API_SERVER_URL = "http://49.4.71.112:8090/iahs/";
+//    String API_SERVER_URL = "http://200.20.32.34:8090/iahs/";
+    String API_SERVER_URL = "http://49.4.55.95:8090/iahs/";
 
     //作业位置H5（by深度）（0深松作业 1水田深翻 2秸秆还田）
     String URL_DEEP = "http://39.106.254.253/static/mobileClient/workDetail/workDetailByDepth.html?workSerial=";
@@ -80,9 +83,12 @@ public interface ApiService {
     Observable<EquipmentstatusModel>  getEquipmentStatus(@HeaderMap Map<String, String> headers, @Body RequestBody loginjson);
 
     //    设备参数查询
-    @POST("equipment-status/getByEquipmentId")
+    @POST("equipment-parameter/getByEquipmentId")
     Observable<ParameterModel>  getParameter(@HeaderMap Map<String, String> headers, @Body RequestBody loginjson);
 
+    //    设备参数提交
+    @POST("equipment-parameter/put")
+    Observable<SubmitParameterModel>  postParameter(@HeaderMap Map<String, String> headers, @Body RequestBody loginjson);
 
 
 

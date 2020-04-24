@@ -11,7 +11,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class ApiClient {
     public static Retrofit mRetrofit_internal, mRetrofit_external;
-    public static final String BASEURL_INTERNAL = "http://49.4.71.112:8090/iahs/";
+//    public static final String BASEURL_INTERNAL = "http://49.4.71.112:8090/iahs/";
+//    public static final String BASEURL_INTERNAL = "http://200.20.32.34:8090/iahs/";
+    public static final String BASEURL_INTERNAL = "http://49.4.55.95:8090/iahs/";
 
 //    http://39.107.152.122/fm/app/install/api/
 //    http://39.107.152.122/fm/a/
